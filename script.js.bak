@@ -1,0 +1,120 @@
+const gameState = {
+    currentScene: 0,
+    scenes: [
+        {
+            background: 'url("background.png")',
+            character: 'url("schneider.png")',
+            name: "Mission Captain Mr. Schneider",
+            dialogue: "You have been selected this highstakes mission to escape the distant planet and return to Earth.",
+            choices: [
+                { text: "Continue", nextScene: 1 }
+            ]
+        },
+        {
+            background: 'url("background.png")',
+            character: 'url("schneider.png")',
+            name: "Mission Captain Mr. Schneider",
+            dialogue: "To do this you must re-aquire the lost part of our ship, the mythical \"Tangent Line\".",
+            choices: [
+                { text: "Continue", nextScene: 2 },
+            ]
+        },
+        {
+            background: 'url("background.png")',
+            character: 'url("schneider.png")',
+            name: "Mission Captain Mr. Schneider",
+            dialogue: "To do this I need you to defeat the allien leader and retrieve the Tangent Line. Good luck!",
+            choices: [
+                { text: "Continue", nextScene: 3 },
+            ]
+        },
+        {
+            background: 'url("background.png")',
+            character: 'url("nick_no_sword.png")',
+            name: "Nickolas Siriva and Nicheal Daneil",
+            dialogue: "Yes Captain! We will not let you down!",
+            choices: [
+                { text: "Continue", nextScene: 4 },
+            ]
+        },
+        {
+            background: 'url("background.png")',
+            character: 'url("schneider.png")',
+            name: "Mission Captain Mr. Schneider",
+            dialogue: "Oh wait I forgot to mention, you will need this",
+            choices: [
+                { text: "Continue", nextScene: 5 },
+            ]
+        },
+        {
+            background: 'url("background.png")',
+            character: 'url("tools.png")',
+            name: "Narrator",
+            dialogue: "He hands you the legendary Sword of Integration, the Shield of Differentiation and the book of Trigonomotry. You are now ready to face the alien leader Once you learn to used them.",
+            choices: [
+                { text: "Read the book of Trigonomotry", nextScene: 6},
+                { text: "Equip the tools and head forth", nextScene: 8}
+            ]
+        },
+        {
+            background: 'url("background.png")',
+            character: 'url("book.png")',
+            name: "Book of Trigonomotry",
+            dialogue: "Trigonometric derivitives: ",
+            choices: [
+                { text: "Flip to the next page", nextScene: 7 },
+            ]
+        },
+        {
+            background: 'url("background.png")',
+            character: 'url("book.png")',
+            name: "Book of Trigonomotry",
+            dialogue: "Trigonometric integrals: ",
+            choices: [
+                { text: "Close the book and equip the tools.", nextScene: 8 },
+            ]
+        },
+        {
+            background: 'url("background.png")',
+            character: 'url("schneider.png")',
+            name: "Narrator",
+            dialogue: "Nickolas and Nicheal head forth to face the alien leader. They are ready to face the alien leader.",
+            choices: [
+                { text: "Continue", nextScene: 9 },
+            ]
+        },
+        {
+            background: 'url("background.png")',
+            character: 'url("alien.png")',
+            name: "Alien Leader",
+            dialogue: "You have come to take the Tangent Line. You will never get it!",
+            choices: [
+              { text: "Attack", nextScene: 10 },
+            ]
+        },
+      
+    ]
+};
+
+function renderScene() {
+    const scene = gameState.scenes[gameState.currentScene];
+    document.getElementById('background').style.backgroundImage = scene.background;
+    document.getElementById('character').style.backgroundImage = scene.character;
+    document.getElementById('character-name').textContent = scene.name;
+    document.getElementById('dialogue').textContent = scene.dialogue;
+
+    const choicesContainer = document.getElementById('choices');
+    choicesContainer.innerHTML = '';
+    scene.choices.forEach(choice => {
+        const button = document.createElement('button');
+        button.textContent = choice.text;
+        button.classList.add('choice-button');
+        button.addEventListener('click', () => {
+            gameState.currentScene = choice.nextScene;
+            renderScene();
+        });
+        choicesContainer.appendChild(button);
+    });
+}
+
+renderScene();
