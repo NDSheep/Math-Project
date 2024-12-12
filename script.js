@@ -207,7 +207,7 @@ const gameState = {
             background: 'url("bg.png")',
             character: 'url("sidle.gif")',
             name: "Mission Captain Schneider",
-            dialogue: "Oh wait, I forgot to mention, you will need this",
+            dialogue: "Oh wait, I forgot to mention, you will need this.",
             choices: [
                 { text: "Continue", nextScene: 6 },
             ]
@@ -216,7 +216,7 @@ const gameState = {
             background: 'url("bg.png")',
             character: 'url("t.gif")',
             name: "Narrator",
-            dialogue: "He hands you the legendary Sword of Integration, the Shield of Differentiation, and the book of Trigonometry. You are now ready to face the alien leader Once you learn to use them.",
+            dialogue: "He hands you the legendary Sword of Integration, the Shield of Differentiation, and the book of Trigonometry. You are now ready to face the alien leader once you learn to use them.",
             choices: [
                 { text: "Read the book of Trigonometry", nextScene: 7},
                 { text: "Equip the tools and head forth", nextScene: 9}
@@ -226,7 +226,7 @@ const gameState = {
             background: 'url("bg.png")',
             character: 'url("t.gif")',
             name: "Book of Trigonometry",
-            dialogue: "Trigonometric derivitives:\n   d/dx\[sin(u)\] = cos(u)u\'\n   d/dx\[cos(u)\] = -sin(u)u\'\n  d/dx\[tan(u)\] = sec^2(u)u\'\n   d/dx\[sec(u)\] = sec(u)tan(u)u\'\n   d/dx\[csc(u)\] = -csc(u)cot(u)u\'\n   d/dx\[cot(u)\] = -csc^2(u)u\'",
+            dialogue: "Trigonometric derivatives:\n   d/dx\[sin(u)\] = cos(u)u\'\n   d/dx\[cos(u)\] = -sin(u)u\'\n  d/dx\[tan(u)\] = sec^2(u)u\'\n   d/dx\[sec(u)\] = sec(u)tan(u)u\'\n   d/dx\[csc(u)\] = -csc(u)cot(u)u\'\n   d/dx\[cot(u)\] = -csc^2(u)u\'",
             choices: [
                 { text: "Flip to the next page", nextScene: 8 },
             ]
