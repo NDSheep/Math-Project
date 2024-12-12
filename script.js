@@ -373,8 +373,8 @@ function askQuestion(action) {
     if (userAnswer && userAnswer.toLowerCase().trim() === question.answer.toLowerCase()) {
         handleCombatAction(action);
     } else {
-        if(prompt("Incorrect answer. was it mathematically equivalent to the correct answer: " + question.answer + "? (yes/no)").toLowerCase().trim() === "yes"){
-          prompt("Sorry for the Error.")
+        if(confirm("Incorrect answer. Was it mathematically equivalent to the correct answer: " + question.answer + "?\n(ok = yes/ cancel = no)")){
+          confirm("Sorry for the Error.");
           handleCombatAction(action);
         } else {
           gameState.scenes[gameState.currentScene].dialogue = "Incorrect answer. You lost your turn!";
